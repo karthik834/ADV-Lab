@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik To Do List</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script>
+        function toggleEdit(id) {
+            const text = document.getElementById('task-text-' + id);
+            const form = document.getElementById('edit-form-' + id);
+            const button = document.getElementById('edit-button-' + id);
+            const isEditing = form.style.display !== 'none';
+            form.style.display = isEditing ? 'none' : 'inline';
+            text.style.display = isEditing ? 'inline' : 'none';
+            button.textContent = isEditing ? 'Edit' : 'Cancel';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1> Karthik's To Do List</h1>
+        <form action="/add" method="POST">
+            <input type="text" name="task" placeholder="Enter a new task" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <div class="task-item">
+                    <span id="task-text-{{ task.id }}">{{ task.text }}</span>
+                    <div class="actions">
+                        <form id="edit-form-{{ task.id }}" action="/edit/{{ task.id }}" method="POST" style="display: none;">
+                            <input type="text" name="task" value="{{ task.text }}" required>
+                            <button type="submit">Save</button>
+                        </form>
+                        <button id="edit-button-{{ task.id }}" type="button" onclick="toggleEdit('{{ task.id }}')">Edit</button>
+                        <form action="/delete/{{ task.id }}" method="POST">
+                            <button type="submit" class="delete">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

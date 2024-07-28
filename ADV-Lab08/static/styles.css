@@ -1,0 +1,115 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    margin-top: 0;
+    color: black;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    border: none;
+    color: whitesmoke;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: violet;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid wheat;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item span {
+    flex-grow: 1;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions form {
+    display: inline;
+}
+
+.actions button {
+    background-color: green;
+    border: 1px;
+    padding: 8px 16px;
+    cursor: pointer;
+    width: 70px;
+    height: 35px;
+}
+
+.actions button.delete {
+    background-color: red;
+    padding: 8px 16px;
+    width: 70px;
+    height: auto;
+}
+
+.actions button.delete:hover {
+    background-color: orangered;
+    padding: 8px 16px;
+}
+
+.actions button:hover {
+    background-color: gray;
+    padding: 8px 16px;
+    border: 1px;
+}
+
+.actions form button {
+    background-color: transparent;
+    border: 1px solid whitesmoke;
+    color: black;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.actions form button:hover {
+    color: blueviolet;
+}
+
+.actions form input[type="text"] {
+    width: 200px;
+}

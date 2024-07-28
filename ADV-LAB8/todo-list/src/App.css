@@ -1,0 +1,43 @@
+.App {
+    font-family: Arial, sans-serif;
+      text-align: center;
+        margin-top: 50px;
+        }
+
+        input[type="text"] {
+          padding: 8px;
+            margin: 5px;
+            }
+
+            button {
+              padding: 8px;
+                margin: 5px;
+                }
+
+                ul {
+                  list-style-type: none;
+                    padding: 0;
+                    }
+
+                    li {
+                      margin: 10px 0;
+                        display: flex;
+                          align-items: center;
+                            justify-content: center;
+                            }
+
+                            span {
+                              cursor: pointer;
+                              }
+
+                              button {
+                                margin-left: 10px;
+                                }
+
+                                div {
+                                  display: flex;
+                                    justify-content: center;
+                                      align-items: center;
+                                      }
+
+
